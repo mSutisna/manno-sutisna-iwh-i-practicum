@@ -40,11 +40,10 @@ app.post('/update-cobj', async (req, res) => {
         Authorization: `Bearer ${PRIVATE_APP_ACCESS}`,
         'Content-Type': 'application/json',
     }
-    const { Name, type, age } = req.body;
     const properties = {
-        name: Name,
-        type,
-        age
+        name: req.body.Name,
+        type: req.body.type,
+        age: req.body.age
     }
     try {
         await axios
